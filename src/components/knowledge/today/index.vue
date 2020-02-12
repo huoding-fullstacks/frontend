@@ -98,9 +98,11 @@
         created() {
             let date = new Date();
             let day = date.getDate();
+            let dayStr = day < 10? "0" + day : day;
             let month = date.getMonth() + 1;
+            let monthStr = month < 10 ? "0" + month : month;
             let year = date.getFullYear();
-            let query = year + "-" + month + "-" + day;
+            let query = year + "-" + monthStr + "-" + day;
 
             this.$axios({
                 method:'get',
