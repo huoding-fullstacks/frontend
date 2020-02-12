@@ -102,7 +102,7 @@
             let month = date.getMonth() + 1;
             let monthStr = month < 10 ? "0" + month : month;
             let year = date.getFullYear();
-            let query = year + "-" + monthStr + "-" + day;
+            let query = year + "-" + monthStr + "-" + dayStr;
 
             this.$axios({
                 method:'get',
@@ -133,7 +133,9 @@
               let day = date.getDate();
               let month = date.getMonth() + 1;
               let year = date.getFullYear();
-              let query = year + "-" + month + "-" + day;
+              let dayStr = day < 10? "0" + day : day;
+              let monthStr = month < 10 ? "0" + month : month;
+              let query = year + "-" + monthStr + "-" + dayStr;
 
               this.$axios({
                   method:'get',
